@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import random
+import time
 
 # CONFIGURACIÓN DE PÁGINA
 st.set_page_config(page_title="Quiz de Cultura General", page_icon="🧠")
@@ -53,6 +54,7 @@ if not st.session_state.finalizado:
                 st.error(f"Incorrecto. La respuesta era: {correcta}")
             
             # Preparar la siguiente pregunta
+            time.sleep(1.5)  # <--- Pausa de un segundo y medio
             st.session_state.indice_pregunta += 1
             del st.session_state.opciones_mezcladas # Forzamos nueva mezcla
             
